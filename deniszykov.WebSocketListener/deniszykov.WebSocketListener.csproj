@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net45;netstandard1.3</TargetFrameworks>
+		<TargetFrameworks>netstandard2.0</TargetFrameworks>
 		<PackageId>deniszykov.WebSocketListener</PackageId>
 		<Description>A lightweight and highly scalable asynchronous WebSocket listener for .NET Core, .NET and Mono.
 https://github.com/deniszykov/WebSocketListener</Description>
@@ -114,7 +114,7 @@ UNIX Domain Sockets are tested on Linux</PackageReleaseNotes>
 		<PropertyGroup>
 			<ILRepack Condition="'$(ILRepack)' == ''">$(NuGetPackageRoot)ilrepack\2.1.0-beta1\tools\ILRepack.exe</ILRepack>
 			<ILRepackTargetPlatform Condition="'$(TargetFramework)' == 'net45'">v4,$(FrameworkPath)</ILRepackTargetPlatform>
-			<ILRepackTargetPlatform Condition="'$(TargetFramework)' == 'netstandard1.3'">v4</ILRepackTargetPlatform>
+			<ILRepackTargetPlatform Condition="'$(TargetFramework)' == 'netstandard2.0'">v4</ILRepackTargetPlatform>
 			<WSLSignKey>$(ProjectDir)../WebSocketListener.snk</WSLSignKey>
 		</PropertyGroup>		
 		<Exec Command="&quot;$(ILRepack)&quot; /target:library &quot;/targetplatform:$(ILRepackTargetPlatform)&quot; &quot;/keyfile:$(WSLSignKey)&quot; /xmldocs /union /parallel &quot;/out:$(TargetPath)&quot; &quot;$(TargetPath)&quot; &quot;$(TargetDir)vtortola.WebSockets.Deflate.dll&quot; &quot;$(TargetDir)vtortola.WebSockets.dll&quot; &quot;$(TargetDir)vtortola.WebSockets.Rfc6455.dll&quot;" WorkingDirectory="$(ProjectDir)" />

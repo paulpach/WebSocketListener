@@ -8,6 +8,7 @@ namespace vtortola.WebSockets
         private readonly ObjectPool<byte[]> smallPool;
         private readonly ObjectPool<byte[]> largePool;
 
+        [Obsolete()]
         public override int SmallBufferSize { get; }
         public override int LargeBufferSize { get; }
 

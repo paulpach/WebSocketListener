@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net45;netstandard1.3</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0</TargetFrameworks>
         <Description>http://vtortola.github.io/WebSocketListener</Description>
         <Company>vtortola</Company>
         <Product>vtortola.WebSockets.Rfc6455</Product>
@@ -33,6 +33,9 @@
 
     <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
         <DefineConstants>$(DefineConstants);NETSTANDARD;NAMED_PIPES_DISABLE;THREADABORTDUMMY</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+        <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
         <DefineConstants>$(DefineConstants);UAP;NAMED_PIPES_DISABLE;THREADABORTDUMMY</DefineConstants>

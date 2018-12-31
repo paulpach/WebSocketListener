@@ -169,7 +169,6 @@ namespace vtortola.WebSockets.UnitTests
             options.Standards.RegisterRfc6455();
             options.Transports.ConfigureTcp(tcp =>
             {
-                tcp.IsAsync = true;
                 tcp.NoDelay = false;
                 tcp.BacklogSize = maxClients;
                 tcp.SendTimeout = TimeSpan.FromSeconds(15);
